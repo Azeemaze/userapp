@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Welcome {{user}} you are {{status}}
+<br>
+
+<h1>Check your profile</h1>
+<ul>
+    {% for post in object_list %}
+
+
+    <li><a href="{% url 'article-detail' post.pk %}"> {{ post.Title }} </a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'home' %}">Home Page</a></button>
+</body>
+</html>

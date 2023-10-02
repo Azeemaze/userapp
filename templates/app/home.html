@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'app/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+
+<h3>Home Page</h3>
+
+<br>
+<ul>
+    {% for post in object_list %}
+    <li><a href="{% url 'article-detail' post.pk %}"> {{ post.Title }} </a>-
+        {{ post.category }} <br/>
+        {{ post.author }} <br/>
+        {{ post.Description | slice:":100" }} <br/>
+        {{ post.created_at }} <br/>
+    </li>
+    {% endfor %}
+
+</ul>
+<br>
+    {% endblock %}
+
+</body>
+</html>
